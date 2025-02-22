@@ -33,8 +33,8 @@ class _SeasonScreenState extends State<SeasonScreen> {
           final match = matches[index];
           return ListTile(
             title: Text(match.opponent),
-            subtitle: Text(match.date),
-            trailing: Text('Risultato: ${match.result ?? "N/D"}'),
+            subtitle: Text(match.date.toString()),
+            // trailing: Text('Risultato: ${match.result ?? "N/D"}'),
           );
         },
       ),

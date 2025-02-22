@@ -27,7 +27,7 @@ class _StatScreenState extends State<StatScreen> {
   }
 
   void _addStat() async {
-    final newStat = Stat(matchId: widget.matchId, playerId: 1, action: 'Punto');
+    final newStat = Stat(matchId: widget.matchId, playerId: 1, points: 1);
     await DatabaseHelper.instance.insertStat(newStat);
     _loadStats();
   }
@@ -41,7 +41,7 @@ class _StatScreenState extends State<StatScreen> {
         itemBuilder: (context, index) {
           final stat = stats[index];
           return ListTile(
-            title: Text('Giocatore: ${stat.playerId} - Azione: ${stat.action}'),
+            title: Text('Giocatore: ${stat.playerId} - Punti: ${stat.points}, Attacchi: ${stat.attacks}, Ace: ${stat.aces}'),
             trailing: IconButton(
               icon: Icon(Icons.delete),
               onPressed: () async {

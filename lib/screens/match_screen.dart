@@ -25,7 +25,7 @@ class _MatchScreenState extends State<MatchScreen> {
   }
 
   void _addMatch() async {
-    final newMatch = Match(opponent: 'Nuova Squadra', date: DateTime.now().toString());
+    final newMatch = Match(opponent: 'Nuova Squadra', date: DateTime.now());
     await DatabaseHelper.instance.insertMatch(newMatch);
     _loadMatches();
   }
@@ -40,7 +40,7 @@ class _MatchScreenState extends State<MatchScreen> {
           final match = matches[index];
           return ListTile(
             title: Text(match.opponent),
-            subtitle: Text(match.date),
+            subtitle: Text(match.date.toString()),
             trailing: Icon(Icons.arrow_forward),
             onTap: () {
               Navigator.push(
