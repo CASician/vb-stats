@@ -25,8 +25,44 @@ class _MatchScreenState extends State<MatchScreen> {
   }
 
   void _addMatch() async {
-    final newMatch = Match(opponent: 'Nuova Squadra', date: DateTime.now());
-    await DatabaseHelper.instance.insertMatch(newMatch);
+    String? matchName = await _showMatchNameDialog();
+    if (matchName != null && matchName.isNotEmpty) {
+      final newMatch = Match(opponent: matchName, date: DateTime.now());
+      await DatabaseHelper.instance.insertMatch(newMatch);
+      _loadMatches();
+    }
+  }
+
+  Future<String?> _showMatchNameDialog() async {
+    String matchName = '';
+    return showDialog<String>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Nome della Partita'),
+          content: TextField(
+            onChanged: (value) {
+              matchName = value;
+            },
+            decoration: InputDecoration(hintText: 'Inserisci il nome della partita'),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, null),
+              child: Text('Annulla'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, matchName),
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _deleteMatch(int id) async {
+    await DatabaseHelper.instance.deleteMatch(id);
     _loadMatches();
   }
 
@@ -41,13 +77,16 @@ class _MatchScreenState extends State<MatchScreen> {
           return ListTile(
             title: Text(match.opponent),
             subtitle: Text(match.date.toString()),
-            trailing: Icon(Icons.arrow_forward),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => StatScreen(matchId: match.id!)),
               );
             },
+            trailing: IconButton(
+              icon: Icon(Icons.delete, color: Colors.red),
+              onPressed: () => _deleteMatch(match.id!),
+            ),
           );
         },
       ),

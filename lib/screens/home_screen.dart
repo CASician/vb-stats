@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => MatchScreen()),
                 );
               },
-              child: Text('Gestisci Partita'),
+              child: Text('Gestisci Partite'),
             ),
             SizedBox(height: 16),
             ElevatedButton(

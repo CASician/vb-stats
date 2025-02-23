@@ -48,13 +48,9 @@ class DatabaseHelper {
     await db.execute('''
       CREATE TABLE stats (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        match_id INTEGER NOT NULL,
-        player_id INTEGER NOT NULL,
-        points INTEGER DEFAULT 0,
-        aces INTEGER DEFAULT 0,
-        errors INTEGER DEFAULT 0,
-        attacks INTEGER DEFAULT 0,
-        receptions INTEGER DEFAULT 0,
+        match_id INTEGER,
+        player_id INTEGER,
+        action TEXT
         FOREIGN KEY (match_id) REFERENCES matches(id) ON DELETE CASCADE,
         FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE CASCADE
       )
