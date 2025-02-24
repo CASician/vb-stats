@@ -32,7 +32,6 @@ class DatabaseHelper {
       CREATE TABLE players (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
-        role TEXT NOT NULL,
         number INTEGER NOT NULL
       )
     ''');

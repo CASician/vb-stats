@@ -33,10 +33,9 @@ class _StatScreenState extends State<StatScreen> {
   }
 
   Future<void> _askForPlayers() async {
-    List<Player> newPlayers = List.generate(7, (index) => Player(name: "", number: 0, role: ""));
+    List<Player> newPlayers = List.generate(7, (index) => Player(name: "", number: 0));
     List<TextEditingController> nameControllers = List.generate(7, (_) => TextEditingController());
     List<TextEditingController> numberControllers = List.generate(7, (_) => TextEditingController());
-    List<TextEditingController> roleControllers = List.generate(7, (_) => TextEditingController());
 
     await showDialog(
       context: context,
@@ -57,10 +56,6 @@ class _StatScreenState extends State<StatScreen> {
                       decoration: InputDecoration(labelText: "Numero Maglia"),
                       keyboardType: TextInputType.number,
                     ),
-                    TextField(
-                      controller: roleControllers[index],
-                      decoration: InputDecoration(labelText: "Ruolo"),
-                    ),
                   ],
                 );
               }),
@@ -76,7 +71,6 @@ class _StatScreenState extends State<StatScreen> {
                 for (int i = 0; i < 7; i++) {
                   newPlayers[i].name = nameControllers[i].text;
                   newPlayers[i].number = int.tryParse(numberControllers[i].text) ?? 0;
-                  newPlayers[i].role = roleControllers[i].text;
                   await DatabaseHelper.instance.insertPlayer(newPlayers[i]);
                 }
                 setState(() {
