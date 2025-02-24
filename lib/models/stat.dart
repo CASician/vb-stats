@@ -1,8 +1,10 @@
 class Stat {
   int? id;
   int matchId;
+  int set;
   int playerId;
-  String action; // Nuovo campo per registrare l'azione (es. "Attacco", "Muro", ecc.)
+  String action;
+  String val;
 
   Stat({
     this.id,

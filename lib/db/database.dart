@@ -27,7 +27,7 @@ class DatabaseHelper {
     );
   }
 
-  Future<void> _createDB(Database db, int version) async {
+  Future<void> _createDB(Database db, int version) async { // FIXME: modify correctly for new version without role.
     await db.execute('''
       CREATE TABLE players (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
