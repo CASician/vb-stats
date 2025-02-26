@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'match_screen.dart';
 import 'season_screen.dart';
+import 'teams_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -22,6 +23,16 @@ class HomeScreen extends StatelessWidget {
               child: Text('Gestisci Partite'),
             ),
             SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TeamsScreen()),
+                );
+              },
+              child: Text('Le tue squadre'),
+            ),
+            SizedBox(height: 48),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(

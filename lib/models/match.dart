@@ -1,7 +1,7 @@
 class Match {
   int? id;
-  String opponent; // Nome della squadra avversaria
-  DateTime date; // Data della partita
+  String opponent;
+  DateTime date;
 
   Match({this.id, required this.opponent, required this.date});
 

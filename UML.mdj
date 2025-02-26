@@ -179,6 +179,24 @@
 											"height": 13,
 											"text": "+String name",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGVRCW71vfkkns=",
+											"_parent": {
+												"$ref": "AAAAAAGVN3eM9YoVCtk="
+											},
+											"model": {
+												"$ref": "AAAAAAGVRCW7zffhlhc="
+											},
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 112,
+											"top": 326,
+											"width": 138,
+											"height": 13,
+											"text": "+Team team",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
@@ -186,7 +204,7 @@
 									"left": 107,
 									"top": 276,
 									"width": 148,
-									"height": 53
+									"height": 68
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -200,7 +218,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 107,
-									"top": 329,
+									"top": 344,
 									"width": 148,
 									"height": 10
 								},
@@ -2245,24 +2263,6 @@
 											"height": 13,
 											"text": "+String name",
 											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGVRA+5iffXU0c=",
-											"_parent": {
-												"$ref": "AAAAAAGVRA+DNPemaUM="
-											},
-											"model": {
-												"$ref": "AAAAAAGVRA+5gvfUyh0="
-											},
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": 106,
-											"top": 645,
-											"width": 140,
-											"height": 13,
-											"text": "+Player[] players",
-											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
@@ -2270,7 +2270,7 @@
 									"left": 101,
 									"top": 610,
 									"width": 150,
-									"height": 53
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -2284,7 +2284,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 101,
-									"top": 663,
+									"top": 648,
 									"width": 150,
 									"height": 10
 								},
@@ -2382,6 +2382,14 @@
 							},
 							"name": "String name",
 							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGVRCW7zffhlhc=",
+							"_parent": {
+								"$ref": "AAAAAAGVN3eM7YoNsyA="
+							},
+							"name": "Team team"
 						}
 					]
 				},
@@ -2733,14 +2741,6 @@
 								"$ref": "AAAAAAGVRA+DM/eeCWE="
 							},
 							"name": "String name"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGVRA+5gvfUyh0=",
-							"_parent": {
-								"$ref": "AAAAAAGVRA+DM/eeCWE="
-							},
-							"name": "Player[] players"
 						}
 					]
 				}

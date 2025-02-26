@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SeasonScreen extends StatelessWidget {
+class TeamsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Season Screen'),
+        title: Text('Team Screen'),
       ),
       body: Center(
-        child: Text('Questa è la SeasonScreen vuota.'),
+        child: Text('Questa è la TeamScreen vuota.'),
       ),
     );
   }
