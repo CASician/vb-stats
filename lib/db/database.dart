@@ -56,6 +56,8 @@ class DatabaseHelper {
     ''');
   }
 
+  // setters
+
   Future<int> insertPlayer(Player player) async {
     final db = await instance.database;
     return await db.insert('players', player.toMap());
@@ -70,6 +72,8 @@ class DatabaseHelper {
     final db = await instance.database;
     return await db.insert('stats', stat.toMap());
   }
+
+  // getters
 
   Future<List<Player>> getPlayers() async {
     final db = await instance.database;
@@ -89,6 +93,8 @@ class DatabaseHelper {
     return result.map((json) => Stat.fromMap(json)).toList();
   }
 
+  // updates
+
   Future<int> updatePlayer(Player player) async {
     final db = await instance.database;
     return await db.update('players', player.toMap(), where: 'id = ?', whereArgs: [player.id]);
@@ -103,6 +109,9 @@ class DatabaseHelper {
     final db = await instance.database;
     return await db.update('stats', stat.toMap(), where: 'id = ?', whereArgs: [stat.id]);
   }
+
+
+  // deletions
 
   Future<int> deletePlayer(int id) async {
     final db = await instance.database;
