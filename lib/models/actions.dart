@@ -8,6 +8,7 @@ enum ActionType {
   dump,
   save,
   set,
+  freeBallThirdTouch,
   freeBallHandling,
   other,
 }

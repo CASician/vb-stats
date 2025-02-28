@@ -1157,6 +1157,24 @@
 										},
 										{
 											"_type": "UMLEnumerationLiteralView",
+											"_id": "AAAAAAGVToSRD7nqF0k=",
+											"_parent": {
+												"$ref": "AAAAAAGVN3tK6IrvueA="
+											},
+											"model": {
+												"$ref": "AAAAAAGVToSRA7nnyfA="
+											},
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 562,
+											"top": 446,
+											"width": 136,
+											"height": 13,
+											"text": "3T-FreeBall",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLEnumerationLiteralView",
 											"_id": "AAAAAAGVN3/LQ4todoM=",
 											"_parent": {
 												"$ref": "AAAAAAGVN3tK6IrvueA="
@@ -1167,7 +1185,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 562,
-											"top": 446,
+											"top": 461,
 											"width": 136,
 											"height": 13,
 											"text": "Free Ball Handling",
@@ -1185,7 +1203,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 562,
-											"top": 461,
+											"top": 476,
 											"width": 136,
 											"height": 13,
 											"text": "Other",
@@ -1197,7 +1215,7 @@
 									"left": 557,
 									"top": 306,
 									"width": 146,
-									"height": 173
+									"height": 188
 								}
 							],
 							"font": "Arial;13;0",
@@ -1206,7 +1224,7 @@
 							"left": 557,
 							"top": 268,
 							"width": 145,
-							"height": 211,
+							"height": 226,
 							"nameCompartment": {
 								"$ref": "AAAAAAGVN3tK54rmrro="
 							},
@@ -2151,8 +2169,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -36,
-											"top": 46,
+											"left": -30,
+											"top": -100,
 											"height": 13
 										},
 										{
@@ -2163,8 +2181,8 @@
 											},
 											"font": "Arial;13;1",
 											"parentStyle": true,
-											"left": 106,
-											"top": 592,
+											"left": 109,
+											"top": 519,
 											"width": 140,
 											"height": 13,
 											"text": "Team"
@@ -2178,8 +2196,8 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -36,
-											"top": 46,
+											"left": -30,
+											"top": -100,
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -2193,16 +2211,16 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": -36,
-											"top": 46,
+											"left": -30,
+											"top": -100,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 101,
-									"top": 585,
+									"left": 104,
+									"top": 512,
 									"width": 150,
 									"height": 25,
 									"stereotypeLabel": {
@@ -2239,8 +2257,8 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 106,
-											"top": 615,
+											"left": 109,
+											"top": 542,
 											"width": 140,
 											"height": 13,
 											"text": "+int id",
@@ -2257,8 +2275,8 @@
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"left": 106,
-											"top": 630,
+											"left": 109,
+											"top": 557,
 											"width": 140,
 											"height": 13,
 											"text": "+String name",
@@ -2267,8 +2285,8 @@
 									],
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 101,
-									"top": 610,
+									"left": 104,
+									"top": 537,
 									"width": 150,
 									"height": 38
 								},
@@ -2283,8 +2301,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": 101,
-									"top": 648,
+									"left": 104,
+									"top": 575,
 									"width": 150,
 									"height": 10
 								},
@@ -2300,8 +2318,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -18,
-									"top": 23,
+									"left": -15,
+									"top": -50,
 									"width": 10,
 									"height": 10
 								},
@@ -2317,8 +2335,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": true,
-									"left": -18,
-									"top": 23,
+									"left": -15,
+									"top": -50,
 									"width": 10,
 									"height": 10
 								}
@@ -2326,8 +2344,8 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"containerChangeable": true,
-							"left": 101,
-							"top": 585,
+							"left": 104,
+							"top": 512,
 							"width": 149,
 							"height": 90,
 							"nameCompartment": {
@@ -2389,7 +2407,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGVN3eM7YoNsyA="
 							},
-							"name": "Team team"
+							"name": "Team team",
+							"type": ""
 						}
 					]
 				},
@@ -2576,6 +2595,14 @@
 						},
 						{
 							"_type": "UMLEnumerationLiteral",
+							"_id": "AAAAAAGVToSRA7nnyfA=",
+							"_parent": {
+								"$ref": "AAAAAAGVN3tK5orjjLw="
+							},
+							"name": "3T-FreeBall"
+						},
+						{
+							"_type": "UMLEnumerationLiteral",
 							"_id": "AAAAAAGVN3/LPItlT7c=",
 							"_parent": {
 								"$ref": "AAAAAAGVN3tK5orjjLw="
@@ -2732,7 +2759,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGVRA+DM/eeCWE="
 							},
-							"name": "int id"
+							"name": "int id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2740,7 +2768,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGVRA+DM/eeCWE="
 							},
-							"name": "String name"
+							"name": "String name",
+							"type": ""
 						}
 					]
 				}
