@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'match_screen.dart';
 import 'season_screen.dart';
-import 'teams_screen.dart';
+import 'teams/teams_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

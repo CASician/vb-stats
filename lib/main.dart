@@ -3,7 +3,7 @@ import 'screens/home_screen.dart';
 import 'screens/match_screen.dart';
 import 'screens/season_screen.dart';
 import 'db/database.dart';
-import 'screens/teams_screen.dart';
+import 'screens/teams/teams_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
