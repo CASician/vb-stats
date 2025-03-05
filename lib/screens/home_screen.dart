@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'match_screen.dart';
+import 'matches/match_screen.dart';
 import 'season_screen.dart';
 import 'teams/teams_screen.dart';
 
@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MatchScreen()),
+                  MaterialPageRoute(builder: (context) => MatchesScreen()),
                 );
               },
               child: Text('Gestisci Partite'),

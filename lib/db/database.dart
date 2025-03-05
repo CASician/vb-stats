@@ -22,7 +22,7 @@ class DatabaseHelper {
     final path = join(dbPath, filePath);
     return await openDatabase(
       path,
-      version: 22,
+      version: 24,
       onConfigure: (db) async {
         // Abilita le foreign key
         await db.execute('PRAGMA foreign_keys = ON');
@@ -55,8 +55,10 @@ class DatabaseHelper {
     await db.execute('''
       CREATE TABLE matches (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        team INTEGER NOT NULL,
         opponent TEXT NOT NULL,
-        date TEXT NOT NULL
+        date TEXT NOT NULL,
+        FOREIGN KEY(team) REFERENCES teams(id) ON DELETE CASCADE
       )
     ''');
 
@@ -85,6 +87,16 @@ class DatabaseHelper {
     final db = await database;
     final result = await db.query('teams');
     return result.map((map) => Team.fromMap(map)).toList();
+  }
+
+  Future<Team?> getTeamById(int id) async {
+    final db = await database;
+    final result = await db.query('teams', where: 'id = ?', whereArgs: [id]);
+    if (result.isNotEmpty) {
+      return Team.fromMap(result.first);
+    }
+    print('Team with ID $id not found.');
+    return null;
   }
 
   Future<int> updateTeam(Team team) async {
