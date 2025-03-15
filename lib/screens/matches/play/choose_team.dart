@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vb_stats/models/match.dart';
 import 'package:vb_stats/models/player.dart';
+import 'package:vb_stats/screens/matches/play/setter_middles_choice_screen.dart';
 
 import '../../../controllers/player_controller.dart';
 
@@ -282,9 +283,13 @@ class _SelectPlayersScreenState extends State<SelectPlayersScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (fieldPositions.every((p) => p != null) && libero != null) {
+            // Crea la lista dei giocatori in campo
+            List<Player> fieldPlayers = fieldPositions.map((p) => p!).toList();
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Placeholder()),
+              MaterialPageRoute(
+                builder: (context) => SelectPositionsScreen(fieldPlayers: fieldPlayers),
+              ),
             );
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -295,6 +300,7 @@ class _SelectPlayersScreenState extends State<SelectPlayersScreen> {
         child: const Icon(Icons.check),
         tooltip: "Salva configurazione e Play",
       ),
+
     );
   }
 }
