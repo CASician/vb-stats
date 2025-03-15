@@ -3,6 +3,7 @@ import 'package:vb_stats/db/database.dart';
 import 'package:vb_stats/models/match.dart';
 import 'package:vb_stats/screens/matches/single_match_stats_screen.dart';
 import 'package:vb_stats/screens/matches/create_match_screen.dart';
+import 'package:vb_stats/widgets/text_button.dart';
 
 class MatchesScreen extends StatefulWidget {
   const MatchesScreen({Key? key}) : super(key: key);
@@ -19,9 +20,7 @@ class _MatchesScreenState extends State<MatchesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Partite'),
-      ),
+      appBar: AppBar(title: const Text('Partite')),
       body: FutureBuilder<List<Match>>(
         future: _fetchMatches(),
         builder: (context, snapshot) {
@@ -39,15 +38,16 @@ class _MatchesScreenState extends State<MatchesScreen> {
                   children: [
                     const Text('Nessuna partita registrata'),
                     const SizedBox(height: 20),
-                    ElevatedButton(
+                    TextButtonMio(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const CreateMatchScreen()),
+                            builder: (context) => const CreateMatchScreen(),
+                          ),
                         ).then((_) => setState(() {}));
                       },
-                      child: const Text('Crea Partita'),
+                      label: 'Crea Partita',
                     ),
                   ],
                 ),
@@ -68,15 +68,22 @@ class _MatchesScreenState extends State<MatchesScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SingleMatchStatsScreen(match: match)),
+                                builder:
+                                    (context) =>
+                                        SingleMatchStatsScreen(match: match),
+                              ),
                             ).then((_) => setState(() {}));
                           },
                           trailing: IconButton(
                             icon: const Icon(Icons.delete, color: Colors.red),
                             onPressed: () async {
                               if (match.id != null) {
-                                await DatabaseHelper.instance.deleteMatch(match.id!);
-                                setState(() {}); // Aggiorna la lista dopo l'eliminazione
+                                await DatabaseHelper.instance.deleteMatch(
+                                  match.id!,
+                                );
+                                setState(
+                                  () {},
+                                ); // Aggiorna la lista dopo l'eliminazione
                               }
                             },
                           ),
@@ -86,15 +93,16 @@ class _MatchesScreenState extends State<MatchesScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: ElevatedButton(
+                    child: TextButtonMio(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const CreateMatchScreen()),
+                            builder: (context) => const CreateMatchScreen(),
+                          ),
                         ).then((_) => setState(() {}));
                       },
-                      child: const Text('Crea Partita'),
+                      label: 'Crea Partita',
                     ),
                   ),
                 ],

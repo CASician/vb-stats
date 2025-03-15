@@ -4,10 +4,12 @@ import 'screens/matches/match_screen.dart';
 import 'screens/season_screen.dart';
 import 'db/database.dart';
 import 'screens/teams/teams_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DatabaseHelper.instance.database;
+  await dotenv.load(fileName: ".env");
   runApp(VBStatsApp());
 }
 

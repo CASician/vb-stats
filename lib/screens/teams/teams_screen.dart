@@ -3,6 +3,7 @@ import 'package:vb_stats/db/database.dart';
 import 'package:vb_stats/screens/teams/create_team_screen.dart';
 import 'package:vb_stats/screens/teams/team_detail_screen.dart';
 import '../../models/team.dart';
+import '../../widgets/navbar.dart';
 
 class TeamsScreen extends StatefulWidget {
   const TeamsScreen({Key? key}) : super(key: key);
@@ -95,6 +96,7 @@ class _TeamsScreenState extends State<TeamsScreen> {
           return Container();
         },
       ),
+      bottomNavigationBar: const CustomNavbar(currentIndex: 1),
     );
   }
 }
