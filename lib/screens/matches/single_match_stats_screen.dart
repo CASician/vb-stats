@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vb_stats/controllers/player_controller.dart';
 import 'package:vb_stats/db/database.dart';
 import 'package:vb_stats/models/match.dart';
 import 'package:vb_stats/models/team.dart';
+import 'package:vb_stats/screens/matches/play/choose_team.dart';
 
 class SingleMatchStatsScreen extends StatelessWidget {
   final Match match;
@@ -71,7 +73,7 @@ class SingleMatchStatsScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const Placeholder()),
+                        builder: (context) => SelectPlayersScreen(match: match)),
                   );
                 },
                 child: const Text('PLAY!'),
